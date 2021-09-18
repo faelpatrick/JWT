@@ -1,13 +1,24 @@
+const User = require('../models/User');
+
 const userController = {
 
-    register: function(req, res) {
-        console.log('Register')
-        res.send('Register')
+    register: async function (req, res) {
+        const useer = new User({
+            name: req.body.name,
+            email: req.body.email,
+            password: req.body.password
+        })
+
+        try {
+            const savedUser = await User.save()
+            res.send(savedUser)
+        } catch (error) {
+            res.status(400).send(error)
+        }
     },
 
-    login: function(req, res) {
-        console.log('Login')
-        res.send('Login')
+    login: function (req, res) {
+
     }
 }
 module.exports = userController;
