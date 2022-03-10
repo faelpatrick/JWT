@@ -1,1 +1,1 @@
-# Login app using Mongo ans JWT - Json Web Token
+# Login app using Mongo and JWT - Json Web Token
